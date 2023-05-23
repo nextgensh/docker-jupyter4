@@ -9,8 +9,8 @@ RUN apt-get update
 RUN apt-get install -y python3 python3-pip git sudo wget
 
 # Install nodejs>18 which is needed by jupyter4 for building extensions.
-ARG ARCH=linux-arm64.tar.xz
-ARG SUFF=linux-arm64
+ARG ARCH=linux-x64.tar.gz
+ARG SUFF=linux-x64
 WORKDIR /tmp/
 RUN wget https://nodejs.org/dist/v18.16.0/node-v18.16.0-$ARCH
 RUN tar -xvf node-v18.16.0-$ARCH && cd node-v18.16.0-$SUFF/ && cp -r bin/* /bin/ && cp -r include/* /usr/include/ && cp -r lib/* /lib/* && cp -r share/* /usr/share/
